@@ -1,0 +1,8 @@
+architecture,model_role,parameters,parameter_delta_percent,GMAC,GMAC_delta_percent,available_official_test_results,available_development_results
+Standard U-Net,primary baseline,17261825,0.0,200.172127232,0.0,yes,yes
+S2D Replacement,rearrangement-only ablation/control,17344129,0.47679778934150935,202.870375424,1.3479639894483,no,yes
+PMR-2,parameter-count-matched pooled residual control,17426433,0.9535955786830187,205.568623616,2.6959279788966,yes,yes
+DPD-2,proposed early dual-path model,17426433,0.9535955786830187,205.568623616,2.6959279788966,yes,yes
+DPD-4,deeper/all-four-stage placement ablation,19001345,10.077265874263006,209.568941056,4.6943667702092515,no,yes
+LMFR-Net Controlled,controlled reimplementation under common DRIVE pipeline,70994,-99.58872251340748,10.109592172,-94.94955051345238,yes,yes
+Spatial-AttVesNet Controlled,controlled reimplementation under common DRIVE pipeline,10409413,-39.69691501333144,186.054782976,-7.052602403349573,yes,yes
