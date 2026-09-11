@@ -1,0 +1,10 @@
+architecture: unet_standard
+class_name: StandardUNet
+role: primary baseline
+input_channels: 1
+output_channels: 1
+base_channels: 64
+bilinear_upsampling: true
+encoder_reductions: [max_pool, max_pool, max_pool, max_pool]
+adapter_locations: []
+

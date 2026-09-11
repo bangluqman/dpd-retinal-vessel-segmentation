@@ -1,0 +1,57 @@
+dataset: DRIVE
+split_seed: 42
+training_seeds: [41, 42, 43]
+optimization_cases: [21, 22, 23, 24, 27, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 39]
+development_cases: [25, 26, 35, 40]
+official_test_cases: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+preprocessing:
+  channel: green
+  clahe_clip_limit: 2.0
+  clahe_tile_grid: [8, 8]
+  initial_scale_divisor: 255
+  normalization_scope: optimization_FOV_pixels
+  mean: 0.450456161371489
+  std: 0.12463032643796439
+  z_min: -3.5828728675842285
+  z_max: 4.409391403198242
+patches:
+  size: [224, 224]
+  stride: [112, 112]
+  minimum_FOV_occupancy: 0.05
+  image_padding: reflect
+  target_and_FOV_padding: zero
+  sampler: weighted_replacement
+  sampler_weight: "1 + min(vessel_fraction / 0.08, 0.75)"
+augmentation:
+  horizontal_flip_probability: 0.5
+  vertical_flip_probability: 0.5
+  rotation_probability: 0.75
+  rotation_k_90_degrees_uniform: [0, 1, 2, 3]
+  gain_uniform: [0.90, 1.10]
+  offset_uniform: [-0.04, 0.04]
+  gamma_probability: 0.30
+  gamma_uniform: [0.85, 1.20]
+  gaussian_noise_probability: 0.20
+  gaussian_noise_sd_uniform: [0.005, 0.015]
+  clipping: [0.0, 1.0]
+optimization:
+  optimizer: AdamW
+  initial_lr: 0.0002
+  minimum_lr: 0.000001
+  weight_decay: 0.0001
+  scheduler: CosineAnnealingLR
+  T_max: 150
+  epochs: 150
+  batch_size: 4
+  gradient_clip_norm: 1.0
+  AMP_on_CUDA: true
+checkpoint_selection:
+  validation_epochs: "1, every 5, and final epoch"
+  rule: strict minimum full-resolution development FOV-masked BCE plus soft-Dice loss
+test:
+  full_resolution: true
+  tiling: false
+  TTA: false
+  postprocessing: false
+  threshold: 0.50
+

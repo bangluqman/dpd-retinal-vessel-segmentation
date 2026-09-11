@@ -1,0 +1,10 @@
+architecture: unet_s2d_replace_early_ablation
+class_name: EarlyS2DReplacementUNet
+role: rearrangement-only ablation/control
+base_channels: 64
+pixel_unshuffle_factor: 2
+adapter_locations: [reduction_1, reduction_2]
+standard_max_pool_retained_at_adapter_locations: false
+projection: "1x1 Conv(4C -> C), BatchNorm, ReLU"
+residual_behavior: none
+

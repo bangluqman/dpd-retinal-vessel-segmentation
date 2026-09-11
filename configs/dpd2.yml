@@ -1,0 +1,12 @@
+architecture: unet_dpd_v3
+class_name: DPDUNet
+role: proposed early dual-path model
+base_channels: 64
+adapter_locations: [reduction_1, reduction_2]
+standard_max_pool_path_retained: true
+pixel_unshuffle_factor: 2
+phase_channels: four spatial phases
+projection: "bias-free 1x1 Conv(4Cin -> Cout), BatchNorm"
+residual_behavior: projected phase features are added to standard post-DoubleConv features, followed by ReLU
+initialization: BatchNorm affine weight and bias are zero, preserving baseline behavior at initialization
+

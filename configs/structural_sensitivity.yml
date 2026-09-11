@@ -1,0 +1,14 @@
+design: one-factor-at-a-time
+configurations:
+  - {config_id: D0_PRIMARY, rho: 2, tolerance: 1, min_branch: 5, long_branch: 20, far_FP_strict_gt: 5}
+  - {config_id: RHO_1, rho: 1, tolerance: 1, min_branch: 5, long_branch: 20, far_FP_strict_gt: 5}
+  - {config_id: RHO_3, rho: 3, tolerance: 1, min_branch: 5, long_branch: 20, far_FP_strict_gt: 5}
+  - {config_id: TOL_0, rho: 2, tolerance: 0, min_branch: 5, long_branch: 20, far_FP_strict_gt: 5}
+  - {config_id: TOL_2, rho: 2, tolerance: 2, min_branch: 5, long_branch: 20, far_FP_strict_gt: 5}
+  - {config_id: MINBR_3, rho: 2, tolerance: 1, min_branch: 3, long_branch: 20, far_FP_strict_gt: 5}
+  - {config_id: MINBR_7, rho: 2, tolerance: 1, min_branch: 7, long_branch: 20, far_FP_strict_gt: 5}
+  - {config_id: LONGBR_15, rho: 2, tolerance: 1, min_branch: 5, long_branch: 15, far_FP_strict_gt: 5}
+  - {config_id: LONGBR_25, rho: 2, tolerance: 1, min_branch: 5, long_branch: 25, far_FP_strict_gt: 5}
+  - {config_id: FARFP_3, rho: 2, tolerance: 1, min_branch: 5, long_branch: 20, far_FP_strict_gt: 3}
+  - {config_id: FARFP_7, rho: 2, tolerance: 1, min_branch: 5, long_branch: 20, far_FP_strict_gt: 7}
+

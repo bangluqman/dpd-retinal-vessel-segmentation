@@ -1,0 +1,8 @@
+config_id: D0_PRIMARY
+decision_threshold: 0.50
+thin_radius_px: 2
+branch_tolerance_px: 1
+minimum_branch_length_px: 5
+long_branch_threshold_px: 20
+far_FP_distance: "strictly > 5 px"
+

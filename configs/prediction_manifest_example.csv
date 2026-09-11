@@ -1,0 +1,3 @@
+architecture,seed,image_id,prediction_path,ground_truth_path,fov_path
+Standard U-Net,41,01,predictions/standard/seed41/01_prediction_threshold_0p50.png,datasets/DRIVE/test/1st_manual/01_manual1.gif,datasets/DRIVE/test/mask/01_test_mask.gif
+DPD-2,41,01,predictions/dpd2/seed41/01_prediction_threshold_0p50.png,datasets/DRIVE/test/1st_manual/01_manual1.gif,datasets/DRIVE/test/mask/01_test_mask.gif

@@ -1,0 +1,12 @@
+architecture: unet_pmr2
+class_name: PMR2UNet
+role: parameter-count-matched pooled residual control
+base_channels: 64
+adapter_locations: [reduction_1, reduction_2]
+standard_max_pool_retained: true
+adapter_input: same conventional pooled feature to four independent projections
+projection: "four bias-free 1x1 Conv(Cin -> Cout), arithmetic mean, BatchNorm"
+residual_behavior: added after the standard DoubleConv, followed by ReLU
+initialization: BatchNorm affine weight and bias are zero
+caution: parameter matching is not proof of equal effective capacity
+
